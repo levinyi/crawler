@@ -10,7 +10,8 @@ if html.status_code == 200:
     soup = BeautifulSoup(html.text, "html.parser")
     for link in soup.find_all('a'):
         new_link = str(link.get('href'))
-        if new_link.endswith(('.pdf', '.mp3')):
+        # if new_link.endswith(('.pdf', '.mp3')):
+        if new_link.endswith('txt'):
             pdf_url = url + '/' + new_link
             download_list.append(pdf_url)
 
